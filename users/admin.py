@@ -7,17 +7,18 @@ class UserAdmin(BaseUserAdmin):
     fieldsets = (
         # *BaseUserAdmin.fieldsets,    # original form fieldsets, expanded
         # new fieldset added on to the bottom
-        (                            
+        (
             '',                                         # Group Heading
             {'fields': ['username', 'password']},       # Group Fields
         ),
-        (                            
+        (
             'Personal info',
             {'fields': ['first_name', 'last_name', 'mobile', 'email']},
         ),
         (
-            'Permissions', 
-            {'fields': ['is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions']}
+            'Permissions',
+            {'fields': ['is_active', 'is_staff', 'is_superuser',
+                        'groups', 'user_permissions'], 'classes': ['collapse']}
         ),
         (
             'Important dates',
