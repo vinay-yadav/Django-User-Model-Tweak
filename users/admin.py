@@ -4,6 +4,8 @@ from .models import User
 
 
 class UserAdmin(BaseUserAdmin):
+    readonly_fields = ('unique_id',)
+
     fieldsets = (
         # *BaseUserAdmin.fieldsets,    # original form fieldsets, expanded
         # new fieldset added on to the bottom
@@ -13,7 +15,7 @@ class UserAdmin(BaseUserAdmin):
         ),
         (
             'Personal info',
-            {'fields': ['first_name', 'last_name', 'mobile', 'email']},
+            {'fields': ['unique_id', 'first_name', 'last_name', 'mobile', 'email']},
         ),
         (
             'Permissions',
